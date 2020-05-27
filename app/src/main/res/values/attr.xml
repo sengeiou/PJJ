@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ExplainTextView">
+        <attr name="text_explain_size" format="dimension"/>
+        <attr name="text_explain_color" format="color"/>
+        <attr name="text_explain_line_color" format="color"/>
+        <attr name="text_explain_line_padding" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="FloorTextView">
+        <attr name="text_floor_text" format="string"/>
+        <attr name="text_floor_small_text" format="string"/>
+        <attr name="text_floor_text_size" format="dimension"/>
+        <attr name="text_floor_small_text_size" format="dimension"/>
+        <attr name="text_floor_text_color" format="color"/>
+        <attr name="text_floor_small_text_color" format="color"/>
+        <attr name="text_floor_h_padding" format="dimension"/>
+    </declare-styleable>
+</resources>

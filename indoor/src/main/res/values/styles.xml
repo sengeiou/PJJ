@@ -1,0 +1,15 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--Theme.AppCompat.Light.NoActionBar-->
+    <!--@android:style/Theme.NoTitleBar.Fullscreen-->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!--<item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>-->
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+</resources>

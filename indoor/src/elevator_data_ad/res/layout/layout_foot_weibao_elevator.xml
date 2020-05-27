@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120px"
+    android:background="@mipmap/bottom_paly_weibao">
+
+    <View
+        android:layout_width="13px"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="373px"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="6px"
+        android:paddingBottom="9px">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="24px"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_no_name"
+                android:layout_width="117px"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="设备编号"
+                android:textColor="@color/color_f08519"
+                android:textSize="12px" />
+
+            <View
+                android:id="@+id/line_no"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4px"
+                android:layout_marginBottom="4px"
+                android:background="@color/color_f08519" />
+
+            <TextView
+                android:id="@+id/tv_no"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="-3px"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/color_f08519"
+                android:textSize="20px" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="25px"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="3px">
+
+            <TextView
+                android:id="@+id/tv_online"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10px"
+                android:drawablePadding="10px"
+                android:text="电梯安全已启动"
+                android:textColor="@color/white"
+                android:textSize="12px" />
+
+            <TextView
+                android:id="@+id/tv_elevator_explain"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="22px"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="电梯黑匣子数据采集中"
+                android:textColor="@color/white"
+                android:textSize="12px" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_2c86c6_shape"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="26px"
+            android:paddingRight="26px">
+
+            <ImageView
+                android:id="@+id/iv_people_statue"
+                android:layout_width="55px"
+                android:layout_height="40px"
+                android:layout_marginRight="33px"
+                android:background="@drawable/bg_2c86c6_sile_shape"
+                android:src="@mipmap/meiren" />
+
+            <ImageView
+                android:id="@+id/iv_elevator_door_statue"
+                android:layout_width="55px"
+                android:layout_height="40px"
+                android:layout_marginRight="33px"
+                android:background="@drawable/bg_2c86c6_sile_shape" />
+
+            <ImageView
+                android:id="@+id/iv_elevator_run_statue"
+                android:layout_width="55px"
+                android:layout_height="40px"
+                android:layout_marginRight="33px"
+                android:background="@drawable/bg_2c86c6_sile_shape" />
+
+            <TextView
+                android:id="@+id/iv_elevator_floor"
+                android:layout_width="55px"
+                android:layout_height="40px"
+                android:background="@drawable/bg_2c86c6_sile_shape"
+                android:gravity="center"
+                android:textColor="@color/color_2c86c6"
+                android:textSize="22px" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="4px"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="300px"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="6px"
+        android:paddingBottom="9px">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="24px"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_help_phone_explain"
+                android:layout_width="117px"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="救援电话"
+                android:textColor="@color/color_f08519"
+                android:textSize="12px" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4px"
+                android:layout_marginBottom="4px"
+                android:background="@color/color_f08519" />
+
+            <TextView
+                android:id="@+id/tv_help_phone"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="-3px"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/color_f08519"
+                android:textSize="20px" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="25px"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_2c86c6_shape"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_now_date"
+                    android:layout_width="87px"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/color_2c86c6"
+                    android:textSize="10px" />
+
+                <TextView
+                    android:id="@+id/tv_now_week"
+                    android:layout_width="87px"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3px"
+                    android:background="@color/color_2c86c6"
+                    android:gravity="center"
+                    android:padding="1px"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="12px" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="1dp"
+                android:layout_height="25px"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_vertical"
+                android:background="@color/color_2c86c6" />
+
+            <TextView
+                android:id="@+id/tv_now_time"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/line"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/color_2c86c6"
+                android:textSize="33px" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="4px"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingTop="6px"
+        android:paddingBottom="9px">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="24px"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_weibao_date_explain"
+                android:layout_width="117px"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="维保日期"
+                android:textColor="@color/color_f08519"
+                android:textSize="12px" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4px"
+                android:layout_marginBottom="4px"
+                android:background="@color/color_f08519" />
+
+            <TextView
+                android:id="@+id/tv_weibao_date"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="-3px"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/color_f08519"
+                android:textSize="20px" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="24px"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_local_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10px"
+                android:paddingTop="8px"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="12px" />
+
+            <RelativeLayout
+                android:id="@+id/ll_car"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="22px"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_car"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8px"
+                    android:layout_toLeftOf="@+id/tv_car_no"
+                    android:text="今天限行的尾号是："
+                    android:textColor="@color/white"
+                    android:textSize="12px" />
+
+                <TextView
+                    android:id="@+id/tv_car_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignBaseline="@+id/tv_car"
+                    android:layout_toLeftOf="@+id/tv_car1"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="20px"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_car1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8px"
+                    android:layout_toLeftOf="@+id/tv_car_no1"
+                    android:text=" 和 "
+                    android:textColor="@color/white"
+                    android:textSize="12px" />
+
+                <TextView
+                    android:id="@+id/tv_car_no1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignBaseline="@+id/tv_car"
+                    android:layout_alignParentRight="true"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="20px"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_2c86c6_shape"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_today_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="14px"
+                    android:paddingTop="8px"
+                    android:text="今天"
+                    android:textColor="@color/color_474645"
+                    android:textSize="13px" />
+
+                <TextView
+                    android:id="@+id/tv_today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_today_name"
+                    android:paddingLeft="14px"
+                    android:paddingTop="4px"
+                    android:text=""
+                    android:textColor="@color/color_2c86c6"
+                    android:textSize="12px" />
+
+                <ImageView
+                    android:id="@+id/iv_today"
+                    android:layout_width="40px"
+                    android:layout_height="40px"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="13px"
+                    android:scaleType="fitCenter" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="1dp"
+                android:layout_height="25px"
+                android:background="@color/color_2c86c6" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_tomorrow_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="14px"
+                    android:paddingTop="8px"
+                    android:text="明天"
+                    android:textColor="@color/color_595757"
+                    android:textSize="13px" />
+
+                <TextView
+                    android:id="@+id/tv_tomorrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_tomorrow_name"
+                    android:paddingLeft="14px"
+                    android:paddingTop="4px"
+                    android:text=""
+                    android:textColor="@color/color_2c86c6"
+                    android:textSize="12px" />
+
+                <ImageView
+                    android:id="@+id/iv_tomorrow"
+                    android:layout_width="40px"
+                    android:layout_height="40px"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="13px"
+                    android:scaleType="fitCenter" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="1dp"
+                android:layout_height="25px"
+                android:background="@color/color_2c86c6" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_after_tomorrow_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="14px"
+                    android:paddingTop="8px"
+                    android:text="后天"
+                    android:textColor="@color/color_595757"
+                    android:textSize="13px" />
+
+                <TextView
+                    android:id="@+id/tv_after_tomorrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_after_tomorrow_name"
+                    android:paddingLeft="14px"
+                    android:paddingTop="4px"
+                    android:text=""
+                    android:textColor="@color/color_2c86c6"
+                    android:textSize="13px" />
+
+                <ImageView
+                    android:id="@+id/iv_after_tomorrow"
+                    android:layout_width="40px"
+                    android:layout_height="40px"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="13px"
+                    android:scaleType="fitCenter" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="13px"
+        android:layout_height="match_parent" />
+</LinearLayout>

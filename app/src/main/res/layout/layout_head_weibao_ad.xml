@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg08856e"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="362px"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="19px"
+        android:paddingRight="61px"
+        android:paddingTop="31px"
+        android:paddingBottom="31px">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_name_no_explain"
+                android:layout_width="150px"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="设备编号："
+                android:textColor="@color/white"
+                android:textSize="21px" />
+
+            <com.pjj.xsp.view.custom.LineTextView
+                android:id="@+id/tv_name_no"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="21px" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_time_explain"
+                android:layout_width="150px"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="最新维保时间："
+                android:textColor="@color/white"
+                android:textSize="21px" />
+
+            <com.pjj.xsp.view.custom.LineTextView
+                android:id="@+id/tv_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="21px" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_help_phone_explain"
+                android:layout_width="150px"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="电梯救援电话："
+                android:textColor="@color/white"
+                android:textSize="21px" />
+
+            <com.pjj.xsp.view.custom.LineTextView
+                android:id="@+id/tv_help_phone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="21px" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:paddingLeft="20px"
+        android:paddingTop="30px"
+        android:paddingRight="38px"
+        android:paddingBottom="30px">
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="20px"
+            android:maxLines="3"
+            android:textColor="@color/white"
+            android:textSize="26px" />
+    </FrameLayout>
+
+</LinearLayout>

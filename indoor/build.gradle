@@ -1,0 +1,164 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.pjj.xsp"
+        minSdkVersion 19
+        targetSdkVersion 22
+        versionCode 3
+        versionName "1.0.2"
+        flavorDimensions "default"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters 'armeabi', 'x86'
+        }
+    }
+    productFlavors {
+        elevator_data_ad {
+            buildConfigField("String", "USE_TYPE", "\"elevator_data_ad\"")
+        }
+        //电梯系统
+        elevator_ad {
+            buildConfigField("String", "USE_TYPE", "\"elevator_ad\"")
+        }
+        //户内系统
+        indoor_ad_smdt {//5.1系统
+            buildConfigField("String", "USE_TYPE", "\"indoor_ad_smdt\"")
+        }
+        indoor_ad_rk {//4.4系统
+            buildConfigField("String", "USE_TYPE", "\"indoor_ad_rk\"")
+        }
+        indoor_ad_sh_ys_m1 {//4.4系统 盛辉
+            buildConfigField("String", "USE_TYPE", "\"ad_sh_ys_m1\"")
+        }
+        indoor_ad_m10_3128 {//6.0系统
+            buildConfigField("String", "USE_TYPE", "\"indoor_ad_m10_3128\"")
+        }
+    }
+    signingConfigs {
+        debug {
+            keyAlias 'tjj'
+            keyPassword 'tlwtjj6716'
+            storeFile file('E:/jks/tjj.jks')
+            storePassword 'tlwtjj6716'
+        }
+        smdt_system_debug {//indoor_ad_smdt app以及系统签名
+            keyAlias 'tjj'
+            keyPassword 'tlwtjj6716'
+            storeFile file('E:/jks/smdt_3288/tjj.jks')
+            storePassword 'tlwtjj6716'
+        }
+        m10_3128_system_debug {//m10_3128 app以及系统签名
+            keyAlias 'tjj'
+            keyPassword 'tlwtjj6716'
+            storeFile file('E:/jks/m10_3128/tjj.jks')
+            storePassword 'tlwtjj6716'
+        }
+        ad_sh_ys_m1_system_debug {//ad_sh_ys_m1 app以及系统签名
+            keyAlias 'tjj'
+            keyPassword 'tlwtjj6716'
+            storeFile file('E:/jks/ad_sh_ys_m1/tjj.jks')
+            storePassword 'tlwtjj6716'
+        }
+    }
+    buildTypes {
+        debug {
+            buildConfigField("boolean", "APP_TYPE", appType().toString())
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.m10_3128_system_debug
+        }
+        release {
+            buildConfigField("boolean", "APP_TYPE", appType().toString())
+            //移除无用的resource文件
+            shrinkResources true
+            //Zipalign优化
+            zipAlignEnabled true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets.main {
+        jniLibs.srcDirs = ['libs']
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    applicationVariants.all { variant ->
+        //println "variant = $variant"
+        variant.outputs[0].processManifest.doLast {
+            //AndroidManifest.xml的位置
+            def manifestFile = "${projectDir}/src/main/AndroidManifest.xml"
+            println(manifestFile)
+            def mainXml = new File(manifestFile).getText('UTF-8')
+            if (variant.name.contains("ad_smdt") || variant.name.contains("ad_m10_3128") || variant.name.contains("sh_ys_m1")) {
+                if (!mainXml.contains("sharedUserId")) {
+                    def updatedContent = mainXml.replaceAll("xmlns:tools=\"http://schemas.android.com/tools\"", "xmlns:tools=\"http://schemas.android.com/tools\"   android:sharedUserId=\"android.uid.system\"")
+                    new File(manifestFile).write(updatedContent, 'UTF-8')
+                }
+            } else {
+                if (mainXml.contains("sharedUserId")) {
+                    def updatedContent = mainXml.replaceAll("android:sharedUserId=\"android.uid.system\"", "")
+                    new File(manifestFile).write(updatedContent, 'UTF-8')
+                }
+            }
+        }
+        variant.outputs.all {
+            outputFileName = "pjj-xsp-${variant.name}-v${variant.versionName}-${releaseTime()}.apk"
+        }
+    }
+}
+
+greendao {
+    schemaVersion 5
+    daoPackage 'com.pjj.xsp.db'
+    targetGenDir 'src/main/java'
+}
+//app环境设置 正式、测试
+static def appType() {
+    return false
+}
+
+static def releaseTime() {
+    return System.currentTimeMillis() + "-" + (appType() ? "正式" : "测试")
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation files('libs/jcore-android-2.1.0.jar')
+    implementation files('libs/jpush-android-3.3.4.jar')
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    //播放其他格式的视频
+    //    implementation 'com.google.android.exoplayer:exoplayer:r2.0.4'
+    implementation 'org.greenrobot:greendao:3.2.2'
+    implementation 'net.zetetic:android-database-sqlcipher:3.5.2'
+    //    implementation files('libs/commons-codec-1.11.jar')
+    //阿里服务上传下载
+    implementation 'com.aliyun.dpa:oss-android-sdk:+'
+    implementation 'org.jetbrains:annotations:15.0'
+    implementation 'com.zhy:autolayout:1.4.5'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    indoor_ad_smdtImplementation files('libs/smdt.jar')
+    indoor_ad_smdtImplementation files('libs/apidemo.jar')
+    //    indoor_ad_rkImplementation files('libs/rkapi.jar')
+    indoor_ad_sh_ys_m1Implementation files('libs/rkapi.jar')
+    implementation 'com.google.zxing:core:3.3.0'
+    //腾讯bug管理
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+}

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="34px"
+    android:background="@mipmap/bottom_paly_weibao"
+    android:paddingLeft="14px"
+    android:paddingTop="3px"
+    android:paddingRight="14px"
+    android:paddingBottom="3px">
+
+    <LinearLayout
+        android:id="@+id/ll_1"
+        android:layout_width="304px"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="86px"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="设备编号"
+            android:textColor="@color/color_3488C8"
+            android:textSize="13px" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="17px"
+            android:background="@color/color_3488C8" />
+
+        <TextView
+            android:id="@+id/tv_no"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/color_3488C8"
+            android:textSize="21px" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_2"
+        android:layout_width="438px"
+        android:layout_height="match_parent"
+        android:layout_marginStart="3px"
+        android:layout_toEndOf="@+id/ll_1"
+        android:background="@color/white"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_3488C8"
+                android:layout_centerVertical="true"
+                android:textSize="21px" />
+
+            <TextView
+                android:id="@+id/tv_year_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/tv_year"
+                android:text=" 年 "
+                android:layout_alignBaseline="@+id/tv_year"
+                android:textColor="@color/color_3488C8"
+                android:textSize="13px" />
+
+            <TextView
+                android:id="@+id/tv_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tv_year"
+                android:layout_toEndOf="@+id/tv_year_name"
+                android:textColor="@color/color_3488C8"
+                android:textSize="21px" />
+
+            <TextView
+                android:id="@+id/tv_month_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/tv_month"
+                android:text=" 月 "
+                android:layout_alignBaseline="@+id/tv_year"
+                android:textColor="@color/color_3488C8"
+                android:textSize="13px" />
+
+            <TextView
+                android:id="@+id/tv_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/tv_month_name"
+                android:layout_alignBaseline="@+id/tv_year"
+                android:textColor="@color/color_3488C8"
+                android:textSize="21px" />
+
+            <TextView
+                android:id="@+id/tv_week"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/tv_day"
+                android:text=" 日- 星期三 - "
+                android:layout_alignBaseline="@+id/tv_year"
+                android:textColor="@color/color_3488C8"
+                android:textSize="13px" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/tv_week"
+                android:layout_alignBaseline="@+id/tv_year"
+                android:textColor="@color/color_3488C8"
+                android:textSize="21px" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="304px"
+        android:layout_height="match_parent"
+        android:layout_marginStart="3px"
+        android:layout_toEndOf="@id/ll_2"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="87dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="天气"
+            android:textColor="@color/color_3488C8"
+            android:textSize="13px" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="17px"
+            android:background="@color/color_3488C8" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_xiao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/color_3488C8"
+                    android:textSize="21px" />
+
+                <TextView
+                    android:id="@+id/tv_"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/tv_xiao"
+                    android:text="~"
+                    android:layout_alignBaseline="@+id/tv_xiao"
+                    android:textColor="@color/color_3488C8"
+                    android:textSize="21px" />
+
+                <TextView
+                    android:id="@+id/tv_da"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/tv_"
+                    android:text="0"
+                    android:layout_alignBaseline="@+id/tv_xiao"
+                    android:textColor="@color/color_3488C8"
+                    android:textSize="21px" />
+
+                <TextView
+                    android:id="@+id/tv_weather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/tv_da"
+                    android:text=" ℃· "
+                    android:layout_alignBaseline="@+id/tv_xiao"
+                    android:textColor="@color/color_3488C8"
+                    android:textSize="13px" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,98 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.pjj.xsp"
+        minSdkVersion 19
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        flavorDimensions "default"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        debug {
+            keyAlias 'tjj'
+            keyPassword 'tlwtjj6716'
+            storeFile file('D:/jks/tjj.jks')
+            storePassword 'tlwtjj6716'
+        }
+    }
+    buildTypes {
+        debug {
+            buildConfigField("boolean", "APP_TYPE", appType().toString())
+            buildConfigField("boolean", "OLD_3188", isOLD_3188().toString())
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            buildConfigField("boolean", "APP_TYPE", appType().toString())
+            buildConfigField("boolean", "OLD_3188", isOLD_3188().toString())
+            //移除无用的resource文件
+            shrinkResources true
+            //Zipalign优化
+            zipAlignEnabled true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets.main {
+        jniLibs.srcDirs = ['libs']
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "pjj-elevator-xsp-${variant.name}-v${variant.versionName}-${releaseTime()}${isOLD_3188() ? "-old3188" : ""}.apk"
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+greendao {
+    schemaVersion 1
+    daoPackage 'com.pjj.xsp.db'
+    targetGenDir 'src/main/java'
+}
+//app环境设置 正式、测试
+static def appType() {
+    return false
+}
+
+static def isOLD_3188() {
+    return false
+}
+
+static def releaseTime() {
+    return System.currentTimeMillis() + "-" + (appType() ? "正式" : "测试")
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:support-v4:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation files('libs/AMap_Location_V4.3.0_20181016.jar')
+    implementation files('libs/jcore-android-1.2.5.jar')
+    implementation files('libs/jpush-android-3.1.6.jar')
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    //播放其他格式的视频
+    //    implementation 'com.google.android.exoplayer:exoplayer:r2.0.4'
+    implementation 'org.greenrobot:greendao:3.2.2'
+    //    implementation files('libs/commons-codec-1.11.jar')
+    //阿里服务上传下载
+    implementation 'com.aliyun.dpa:oss-android-sdk:+'
+    implementation 'org.jetbrains:annotations:15.0'
+    implementation 'com.zhy:autolayout:1.4.5'
+}

@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:id="@+id/fl_elevator"
+        android:layout_width="400px"
+        android:layout_height="match_parent"
+        android:background="@color/color_012130">
+
+        <TextView
+            android:id="@+id/tv_elevator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11px"
+            android:paddingLeft="20px"
+            android:paddingRight="0dp"
+            android:text="黑匣子数据采集中"
+            android:textColor="@color/white"
+            android:textSize="18px" />
+        <TextView
+            android:id="@+id/tv_elevator_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|top"
+            android:layout_marginTop="11px"
+            android:textSize="12px"
+            android:visibility="gone"
+            android:textColor="@color/white"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="40px"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="20px"
+            android:paddingRight="20px">
+
+            <ImageView
+                android:id="@+id/iv_people_statue"
+                android:layout_width="80px"
+                android:layout_height="100px"
+                android:layout_marginRight="10px"
+                android:background="@color/color_013544"
+                android:paddingLeft="15px"
+                android:paddingTop="25px"
+                android:paddingRight="15px"
+                android:paddingBottom="25px" />
+
+            <ImageView
+                android:id="@+id/iv_elevator_door_statue"
+                android:layout_width="80px"
+                android:layout_height="100px"
+                android:layout_marginRight="10px"
+                android:background="@color/color_013544"
+                android:paddingLeft="15px"
+                android:paddingTop="25px"
+                android:paddingRight="15px"
+                android:paddingBottom="25px" />
+
+            <ImageView
+                android:id="@+id/iv_elevator_run_statue"
+                android:layout_width="80px"
+                android:layout_height="100px"
+                android:layout_marginRight="10px"
+                android:background="@color/color_013544"
+                android:paddingLeft="15px"
+                android:paddingTop="25px"
+                android:paddingRight="15px"
+                android:paddingBottom="25px" />
+
+            <TextView
+                android:id="@+id/iv_elevator_floor"
+                android:layout_width="80px"
+                android:layout_height="100px"
+                android:background="@color/color_013544"
+                android:gravity="center"
+                android:textColor="@color/color_0dffff"
+                android:textSize="30px" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_middle"
+        android:layout_width="302px"
+        android:layout_height="match_parent"
+        android:background="@color/color_011520">
+
+        <TextView
+            android:id="@+id/tv_now_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28px"
+            android:layout_marginTop="10px"
+            android:text=""
+            android:textColor="@color/color_026c7c"
+            android:textSize="16px" />
+
+        <TextView
+            android:id="@+id/tv_now_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10px"
+            android:layout_marginRight="28px"
+            android:text=""
+            android:textColor="@color/color_026c7c"
+            android:textSize="16px" />
+
+        <TextView
+            android:id="@+id/tv_now_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text=""
+            android:textSize="52px" />
+
+        <LinearLayout
+            android:id="@+id/ll_car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10px"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_car"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="今日限行的尾号是："
+                android:textColor="@color/color_0dffff"
+                android:textSize="20px" />
+
+            <TextView
+                android:id="@+id/tv_num1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/color_eda915"
+                android:textSize="24px"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_car1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 和 "
+                android:textColor="@color/color_0dffff"
+                android:textSize="20px" />
+
+            <TextView
+                android:id="@+id/tv_num2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/color_eda915"
+                android:textSize="24px"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_online_city"
+            android:layout_width="match_parent"
+            android:layout_height="39px"
+            android:background="@color/color_012d3a">
+
+            <TextView
+                android:id="@+id/tv_online"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20px"
+                android:layout_marginTop="0dp"
+                android:drawablePadding="10px"
+                android:gravity="center_vertical"
+                android:text="电梯安全已启动"
+                android:textColor="@color/color_0dffff"
+                android:textSize="18px" />
+
+            <TextView
+                android:id="@+id/tv_local_city"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical|right"
+                android:paddingRight="21px"
+                android:text=""
+                android:textSize="18px" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_tem"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/color_012130"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_today_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10px"
+                    android:paddingBottom="10px"
+                    android:text="今天"
+                    android:textColor="@color/white"
+                    android:textSize="16px" />
+
+                <TextView
+                    android:id="@+id/tv_today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="0px"
+                    android:paddingBottom="0px"
+                    android:text=""
+                    android:textColor="@color/color_0dffff"
+                    android:textSize="16px" />
+
+                <ImageView
+                    android:id="@+id/iv_today"
+                    android:layout_width="46px"
+                    android:layout_height="46px" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/color_011520" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_tomorrow_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10px"
+                    android:paddingBottom="10px"
+                    android:text="明天"
+                    android:textColor="@color/white"
+                    android:textSize="16px" />
+
+                <TextView
+                    android:id="@+id/tv_tomorrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="0px"
+                    android:paddingBottom="0px"
+                    android:text=""
+                    android:textColor="@color/color_0dffff"
+                    android:textSize="16px" />
+
+                <ImageView
+                    android:id="@+id/iv_tomorrow"
+                    android:layout_width="46px"
+                    android:layout_height="46px" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/color_011520" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_after_tomorrow_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10px"
+                    android:paddingBottom="10px"
+                    android:text="后天"
+                    android:textColor="@color/white"
+                    android:textSize="16px" />
+
+                <TextView
+                    android:id="@+id/tv_after_tomorrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="0px"
+                    android:paddingBottom="0px"
+                    android:text=""
+                    android:textColor="@color/color_0dffff"
+                    android:textSize="16px" />
+
+                <ImageView
+                    android:id="@+id/iv_after_tomorrow"
+                    android:layout_width="46px"
+                    android:layout_height="46px" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
